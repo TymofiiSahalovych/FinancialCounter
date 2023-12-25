@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinancialCounter.Views.RatesPage">
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="#E0C56C">
+            <StackLayout Orientation="Horizontal" Margin="10,10,10,0">
+                <Button x:Name="reloadButton" 
+                        Text="Reload Data" 
+                        TextColor="Black"
+                        Clicked="OnReloadButtonClicked"
+                        BackgroundColor="Transparent"/>
+            </StackLayout>
+            <TableView x:Name="exchangeRatesTable" >
+                <TableRoot>
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout Padding="12" MinimumHeightRequest="200">
+                                <Label Text="Exchange Rates to USD:" 
+                                       TextColor="Black" 
+                                       FontAttributes="Bold" />
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

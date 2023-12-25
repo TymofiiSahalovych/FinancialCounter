@@ -1,0 +1,71 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinancialCounter.Views.ExchangePage">
+
+    <StackLayout Padding="20" BackgroundColor="#E0C56C">
+
+        <!-- Text Field for Numeric Input -->
+        <Entry x:Name="amountEntry"
+               Placeholder="Enter amount"
+               TextColor="Black"
+               Keyboard="Numeric"
+               HorizontalOptions="FillAndExpand"
+               Margin="0,0,0,20" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Dropdown for "Convert From" Currency -->
+            <Picker x:Name="convertFromPicker"
+                    Title="Select Currency From"
+                    TextColor="Black"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                />
+
+            <!-- Dropdown for "Convert To" Currency -->
+            <Picker x:Name="convertToPicker"
+                    Title="Select Currency To"
+                    TextColor="Black"
+                    Grid.Column="1"
+                    Grid.Row="2"/>    
+            
+            <!-- Button with switch icon -->
+            <Image Source="SwitchIco.png"
+                    Grid.Column="1"
+                   Grid.Row="1">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSwitchButtonClicked" />
+                </Image.GestureRecognizers>
+            </Image>
+            
+        </Grid>
+        
+        <!-- Button to Initiate Conversion -->
+        <Button Text="Convert"
+                TextColor="Black"
+                FontSize="Medium"
+                Clicked="OnConvertButtonClicked"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="Transparent"/>
+
+        <!-- Result Display -->
+        <Label x:Name="resultLabel"
+               Text=""
+               TextColor="Black"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               FontSize="18"
+               FontAttributes="Bold" />
+
+    </StackLayout>
+
+</ContentPage>

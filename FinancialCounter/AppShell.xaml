@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:FinancialCounter.Views"
+       x:Class="FinancialCounter.AppShell"
+       BackgroundColor="#A19775">
+    <!-- Display a bottom tab bar -->
+    <TabBar>
+        <ShellContent Title="General Information"
+                      Icon="icon_about.png"
+                      ContentTemplate="{DataTemplate views:RatesPage}" />
+        
+        <ShellContent Title="Exchange"
+                      Icon="icon_about.png"
+                      ContentTemplate="{DataTemplate views:ExchangePage}" />
+    </TabBar>
+</Shell>
